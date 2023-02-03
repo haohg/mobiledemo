@@ -1,0 +1,119 @@
+$col-width: calc(100%/12);
+
+//Mixin set the width of a column
+@mixin mixin-col-width($width){
+    flex: 0 0 $width;
+    max-width: $width;
+}
+
+//Mixin set the gutter of a column
+@mixin mixin-col-gutter($padding){
+    padding-left: $padding;
+    padding-right: $padding;
+}
+
+//Mixin set negative margins of a row
+@mixin mixin-row-margin($margin){
+    margin-left: $margin;
+    margin-right: $margin;
+}
+
+.container{
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .row.no-gutter{
+        margin: 0;
+        
+        .col{
+            padding: 0;;
+        }
+    }
+}
+
+// for phone - screen less than 768px wide
+@media screen and (min-width: 320px){
+    .row{
+        @include mixin-row-margin(-4px);
+
+        .col{
+            @include mixin-col-gutter(4px);
+        }
+
+        .col-xs-0{
+            display: none;
+        }
+
+        .col-xs-1{
+            @include mixin-col-width($col-width);
+        }
+
+        .col-xs-2{
+            @include mixin-col-width(calc($col-width * 2));
+        }
+
+        .col-xs-3{
+            @include mixin-col-width(calc($col-width * 3));
+        }
+
+        .col-xs-4{
+            @include mixin-col-width(calc($col-width * 4));
+        }
+
+        .col-xs-5{
+            @include mixin-col-width(calc($col-width * 5));
+        }
+
+        .col-xs-6{
+            @include mixin-col-width(calc($col-width * 6));
+        }
+
+        .col-xs-7{
+            @include mixin-col-width(calc($col-width * 7));
+        }
+
+        .col-xs-8{
+            @include mixin-col-width(calc($col-width * 8));
+        }
+
+        .col-xs-9{
+            @include mixin-col-width(calc($col-width * 9));
+        }
+
+        .col-xs-10{
+            @include mixin-col-width(calc($col-width * 10));
+        }
+
+        .col-xs-11{
+            @include mixin-col-width(calc($col-width * 11));
+        }
+
+        .col-xs-12{
+            @include mixin-col-width(calc($col-width * 12));
+        }
+    }
+}
+
+// for tablet - screen equal to or greater than 768px wide
+@media screen and (min-width: 768px){
+    .mobile-hide{
+        display: none !important;
+    }
+}
+
+// for laptop - screen equal to or greater than 992px wide
+@media screen and (min-width: 992px) {
+    
+}
+  
+// for laptop and desktop - screen equal to or greater than 1200px wide
+@media screen and (min-width: 1200px) {
+    
+}

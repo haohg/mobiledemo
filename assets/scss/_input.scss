@@ -1,0 +1,11 @@
+@mixin input($pd-tb: 0, $pd-lr: 10px){
+    display: inline-block;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    padding: $pd-tb $pd-lr;
+}
+
+.input{
+    @include input;
+}
