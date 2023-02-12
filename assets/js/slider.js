@@ -1,16 +1,38 @@
-window.onload = function(){
-    let items = document.querySelectorAll('.slider-item');
-    let index = 1;
-    function moveElement(){
-      if(index === items.length){
-        index = 0;
-      }
-      items.forEach(function(item){
-          item.style.transform = `translateX(-${index*100}%)`;
-      });
-      index++;
+window.onload = function () {
+  const sliderItems = document.querySelectorAll('.slider-left__item');
+  const sliderTitles = document.querySelectorAll('.slider-left__title');
+  let bannerIndex = 0;
+
+  sliderTitles.forEach( (sliderTitle, indexCurrent) => {
+    sliderTitle.addEventListener('click', function (e) {
+      e.preventDefault();
+      removeClassList(sliderTitles, 'slider-left__title--selected');
+      this.classList.add('slider-left__title--selected');
+      moveBanner(indexCurrent);
+      bannerIndex = indexCurrent;
+
+    });
+  });
+
+  function removeClassList(arr, className) {
+    arr.forEach(element => {
+      element.classList.remove(className);
+    });
+  }
+
+  function moveBanner(position){
+    sliderItems.forEach( (item) => {
+        item.style.transform = `translateX(-${position*100}%)`;
+    });
+    removeClassList(sliderTitles, 'slider-left__title--selected');
+    sliderTitles[position].classList.add('slider-left__title--selected');
+    bannerIndex++;
+    if(position >= sliderItems.length - 1){
+      bannerIndex = 0;
     }
-    
-    setInterval(moveElement, 3000);
-    console.log(items);
+  }
+
+  let interval = setInterval(() => {
+    moveBanner(bannerIndex);
+  }, 3000)
 };
