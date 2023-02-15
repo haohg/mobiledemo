@@ -18,12 +18,17 @@ a {
   text-decoration: none;
 }
 
-ul, ol {
+ul,
+ol {
   list-style-type: none;
 }
 
 .mr-top-10 {
   margin-top: 10px;
+}
+
+.mr-top-20 {
+  margin-top: 20px;
 }
 
 .pd-10 {
@@ -35,11 +40,32 @@ ul, ol {
   padding-bottom: 10px;
 }
 
+.pd-lr-10 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.pd-l-10 {
+  padding-left: 10px;
+}
+
 .pd-lr-5 {
   padding-left: 5px;
   padding-right: 5px;
 }
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section__header {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  border-left: solid 2px #E41D31;
+  color: #3A3A3A;
+}
 .button {
   border: none;
   cursor: pointer;
@@ -55,6 +81,12 @@ ul, ol {
   padding: 0 10px;
 }
 
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 0 5px;
+}
 .header-mobile {
   height: 100px;
   background-color: #E41D31;
@@ -93,6 +125,10 @@ ul, ol {
   color: #fff;
 }
 
+.main {
+  margin-top: 110px;
+}
+
 .slider-left__list {
   display: flex;
   overflow-x: hidden;
@@ -118,4 +154,24 @@ ul, ol {
 .slider-left__title--selected {
   background-color: #E41D31;
   color: #fff;
+}
+
+.list-service__item {
+  text-align: center;
+  font-size: 1.2rem;
+  background-color: #E41D31;
+  color: #fff;
+  font-weight: 600;
+  padding: 10px;
+  min-height: 48px;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+.list-brand__item {
+  min-height: 48px;
+  box-shadow: 0 0 4px #c1c1c1;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
 }/*# sourceMappingURL=main.css.map */
